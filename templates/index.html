@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PersonaPath - Where Personality Meets Purpose</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fef6f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #aed9c5;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      color: #2b4d40;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      color: #4e7166;
+      font-size: 1.2em;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+    }
+   
+    .action-buttons .btn {
+      padding: 16px 32px;
+      font-size: 1.1em;
+      font-weight: 500;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login {
+      background-color: #ffa07a;
+      color: white;
+    }
+
+    .signup {
+      background-color: #c89ec4;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+  
+    .secondary-buttons .btn {
+      padding: 7px 15px;
+      font-size: 0.85em;
+      background-color: #e7d4c0;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .secondary-buttons {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+
+    .description {
+      max-width: 700px;
+      text-align: center;
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login {
+      background-color: #ffc5ab;
+      color: #4a2c23;
+    }
+
+    .signup {
+      background-color: #d3bccc;
+      color: #442c3e;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .help-link, .contact-link {
+      font-size: 0.85em;
+      color: #2c4a3a;
+      text-decoration: none;
+    }
+
+    .help-link:hover, .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .login {
+      background-color: #c9e4de;
+      color: #2c4a3a;
+    }
+
+    .signup {
+      background-color: #e7d4c0;
+      color: #3d3d3d;
+    }
+
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f7e4d9;
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PathFinder</h1>
+    <p>Where Personality Meets Purpose</p>
+  </header>
+
+  <main>
+    <div class="description">
+      <p>Discover your strengths, understand your personality, and explore the careers best aligned with who you truly are. PersonaPath blends AI insights with MBTI analysis to guide you toward a meaningful and successful future.</p>
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn login" onclick="window.location.href='/login'">Login</button>
+      <button class="btn signup" onclick="window.location.href='/signup'">Sign Up</button>
+    </div>
+
+    <div class="secondary-buttons">
+      <button class="btn" onclick="window.location.href='/contact'">Contact Us</button>
+      <button class="btn" onclick="window.location.href='/help'">Need Help?</button>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 PathFinder. All rights reserved.
+  </footer>
+</body>
+</html>

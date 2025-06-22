@@ -1,5 +1,5 @@
 #ZGzxoFRG8YEEpfz4
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,session
 from pymongo import MongoClient
 
 client = MongoClient("mongodb+srv://10caditiverma:ZGzxoFRG8YEEpfz4@cluster0.jvmwija.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
@@ -8,6 +8,8 @@ users_collection = db['users']
 
 
 app = Flask(__name__)
+app.secret_key = 'aditi_verma_secret_2025' 
+
 
 @app.route('/')
 def index():
@@ -60,6 +62,12 @@ def contact():
 @app.route('/help')
 def help():
     return render_template('help.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
+
 
 
 if __name__ == '__main__':

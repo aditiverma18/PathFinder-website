@@ -1,12 +1,145 @@
-<!-- dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome to PathFinder</title>
+  <title>Dashboard - PersonaPath</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fef6f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #aed9c5;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      color: #2b4d40;
+      font-size: 2.2em;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .greeting {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .greeting h2 {
+      font-size: 2em;
+      color: #4e7166;
+    }
+
+    .greeting p {
+      font-size: 1em;
+      color: #666;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .section h3 {
+      margin-top: 0;
+      color: #442c3e;
+    }
+
+    .action-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #d3bccc;
+      color: #442c3e;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .action-btn:hover {
+      background-color: #c4aab9;
+    }
+
+    .logout {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .logout a {
+      font-size: 0.9em;
+      color: #2c4a3a;
+      text-decoration: none;
+    }
+
+    .logout a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f7e4d9;
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome back!</h1>
-  <p>This is your personalized dashboard.</p>
+
+  <header>
+    <h1>PathFinder Dashboard</h1>
+  </header>
+
+  <main>
+
+    <div class="greeting">
+      <h2>Hello, PathFinder👋</h2>
+       <p>Welcome to your personalized career exploration journey. Let's get started!</p>
+    </div>
+
+    <div class="section">
+      <h3>Start Your Career Exploration</h3>
+      <p>Take a short quiz to assess your interests, preferences, and aptitude. This helps us recommend careers that match not just your personality but also your passion and skills.</p>
+      <a href="/quiz" class="action-btn">Take the Quiz</a>
+    </div>
+
+    <div class="section">
+      <h3>Upload Your Resume</h3>
+      <p>Get personalized insights by letting us analyze your resume and extract relevant skills and experience.</p>
+      <a href="/upload-resume" class="action-btn">Upload Resume</a>
+    </div>
+
+    <div class="section">
+      <h3>Explore Careers</h3>
+      <p>Based on your quiz results and resume, explore a curated list of careers tailored to your strengths.</p>
+      <a href="/explore-careers" class="action-btn">View Career Suggestions</a>
+    </div>
+
+    <div class="logout">
+      <button class="btn login" onclick="window.location.href='/logout'">Logout</button>
+    </div>
+
+
+  </main>
+
+  <footer>
+    &copy; 2025 PersonaPath. All rights reserved.
+  </footer>
+
 </body>
 </html>

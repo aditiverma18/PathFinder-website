@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Prediction Quiz</title>
+</head>
+<body>
+    <h2>Career Quiz</h2>
+    <form action="/predict" method="POST">
+        <label>O_score:</label><input type="number" step="0.01" name="O_score"><br>
+        <label>C_score:</label><input type="number" step="0.01" name="C_score"><br>
+        <label>E_score:</label><input type="number" step="0.01" name="E_score"><br>
+        <label>A_score:</label><input type="number" step="0.01" name="A_score"><br>
+        <label>N_score:</label><input type="number" step="0.01" name="N_score"><br>
+        <label>Numerical Aptitude:</label><input type="number" step="0.01" name="Numerical"><br>
+        <label>Spatial Aptitude:</label><input type="number" step="0.01" name="Spatial"><br>
+        <label>Perceptual Aptitude:</label><input type="number" step="0.01" name="Perceptual"><br>
+        <label>Abstract Reasoning:</label><input type="number" step="0.01" name="Abstract"><br>
+        <label>Verbal Reasoning:</label><input type="number" step="0.01" name="Verbal"><br><br>
+
+        <input type="submit" value="Predict Career">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>

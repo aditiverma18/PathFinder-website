@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "I enjoy solving complex math problems.", "trait": "Numerical" },
+  { "id": 2, "question": "I notice small details that others often miss.", "trait": "Perceptual" },
+  { "id": 3, "question": "I find it easy to imagine objects from different angles.", "trait": "Spatial" },
+  { "id": 4, "question": "I like finding patterns and abstract connections.", "trait": "Abstract" },
+  { "id": 5, "question": "I enjoy reading and expressing myself through writing.", "trait": "Verbal" },
+  { "id": 6, "question": "I am open to new experiences and ideas.", "trait": "O_score" },
+  { "id": 7, "question": "I keep my tasks organized and complete them on time.", "trait": "C_score" },
+  { "id": 8, "question": "I enjoy being around people and engaging in conversations.", "trait": "E_score" },
+  { "id": 9, "question": "I am empathetic and care about others' feelings.", "trait": "A_score" },
+  { "id": 10, "question": "I often feel worried or anxious.", "trait": "N_score" },
+  { "id": 11, "question": "I enjoy playing with numbers and doing calculations in my head.", "trait": "Numerical" },
+  { "id": 12, "question": "I can spot differences in images or shapes quickly.", "trait": "Perceptual" },
+  { "id": 13, "question": "I enjoy assembling or disassembling objects to understand how they work.", "trait": "Spatial" },
+  { "id": 14, "question": "I think creatively and like solving riddles or logic puzzles.", "trait": "Abstract" },
+  { "id": 15, "question": "I am confident in expressing ideas in group discussions or writing essays.", "trait": "Verbal" },
+  { "id": 16, "question": "I am curious and eager to explore new topics.", "trait": "O_score" },
+  { "id": 17, "question": "I follow a daily routine and like structured environments.", "trait": "C_score" },
+  { "id": 18, "question": "I seek excitement and enjoy meeting new people.", "trait": "E_score" },
+  { "id": 19, "question": "I go out of my way to help others.", "trait": "A_score" },
+  { "id": 20, "question": "I sometimes feel overwhelmed by emotions.", "trait": "N_score" }
+]

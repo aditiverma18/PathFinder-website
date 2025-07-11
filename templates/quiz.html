@@ -1,27 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Career Prediction Quiz</title>
+  <meta charset="UTF-8">
+  <title>Career Quiz | PathFinder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fef8f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #b7dfce;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1c3c34;
+    }
+
+    .container {
+      max-width: 800px;
+      background-color: #ffffff;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #1c3c34;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .question {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .question p {
+      margin: 0 0 0.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .question label {
+      margin-right: 15px;
+      font-weight: 400;
+      color: #555;
+    }
+
+    button {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #1c3c34;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #145248;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h2>Career Quiz</h2>
-    <form action="/predict" method="POST">
-        <label>O_score:</label><input type="number" step="0.01" name="O_score"><br>
-        <label>C_score:</label><input type="number" step="0.01" name="C_score"><br>
-        <label>E_score:</label><input type="number" step="0.01" name="E_score"><br>
-        <label>A_score:</label><input type="number" step="0.01" name="A_score"><br>
-        <label>N_score:</label><input type="number" step="0.01" name="N_score"><br>
-        <label>Numerical Aptitude:</label><input type="number" step="0.01" name="Numerical"><br>
-        <label>Spatial Aptitude:</label><input type="number" step="0.01" name="Spatial"><br>
-        <label>Perceptual Aptitude:</label><input type="number" step="0.01" name="Perceptual"><br>
-        <label>Abstract Reasoning:</label><input type="number" step="0.01" name="Abstract"><br>
-        <label>Verbal Reasoning:</label><input type="number" step="0.01" name="Verbal"><br><br>
+  <div class="header">PathFinder Career Quiz</div>
 
-        <input type="submit" value="Predict Career">
+  <div class="container">
+    <h2>Start Your Career Exploration</h2>
+    <form id="quizForm" method="post" action="/submit_quiz">
+      <div id="quizContainer"></div>
+      <button type="submit">Submit</button>
     </form>
+  </div>
 
-    {% if prediction_text %}
-        <h3>{{ prediction_text }}</h3>
-    {% endif %}
+  <script>
+    fetch('/get_questions')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('quizContainer');
+        data.forEach(q => {
+          const html = `
+            <div class="question">
+              <p>${q.question}</p>
+              <label><input type="radio" name="q${q.id}" value="1" required> Strongly Disagree</label>
+              <label><input type="radio" name="q${q.id}" value="2"> Disagree</label>
+              <label><input type="radio" name="q${q.id}" value="3"> Neutral</label>
+              <label><input type="radio" name="q${q.id}" value="4"> Agree</label>
+              <label><input type="radio" name="q${q.id}" value="5"> Strongly Agree</label>
+            </div>
+          `;
+          container.innerHTML += html;
+        });
+      });
+  </script>
 </body>
 </html>

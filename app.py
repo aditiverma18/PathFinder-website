@@ -16,8 +16,25 @@ app.secret_key = 'aditi_verma_secret_2025'
 traits = ["O_score", "C_score", "E_score", "A_score", "N_score"]
 
 # Load ML Model + Label Encoder + Scaler
-with open('career_model.pkl', 'rb') as f:
-    model, label_encoder, scaler = pickle.load(f)
+try:
+    with open('career_model.pkl', 'rb') as f:
+        model_data = pickle.load(f)
+        if isinstance(model_data, tuple) and len(model_data) == 3:
+            model, label_encoder, scaler = model_data
+        else:
+            print("⚠️ Model file format incorrect. Retraining model...")
+            # If model format is wrong, retrain it
+            import subprocess
+            subprocess.run(['python', 'career_model.py'])
+            with open('career_model.pkl', 'rb') as f:
+                model, label_encoder, scaler = pickle.load(f)
+except Exception as e:
+    print(f"❌ Error loading model: {e}")
+    print("🔄 Retraining model...")
+    import subprocess
+    subprocess.run(['python', 'career_model.py'])
+    with open('career_model.pkl', 'rb') as f:
+        model, label_encoder, scaler = pickle.load(f)
 
 # Load quiz questions
 with open('questions.json', 'r') as f:

@@ -12,10 +12,19 @@ localPort = 5000
 externalPort = 80
 
 [workflows]
-runButton = "Run Flask App"
+runButton = "Start App"
 
 [[workflows.workflow]]
 name = "Run Flask App"
+author = 44055928
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python app.py"
+
+[[workflows.workflow]]
+name = "Start App"
 author = 44055928
 mode = "sequential"
 

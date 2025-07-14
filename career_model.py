@@ -39,8 +39,8 @@ y_encoded = label_encoder.fit_transform(y)
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(X_scaled, y_encoded, test_size=0.2, random_state=42, stratify=y_encoded)
+# Train-test split (remove stratification due to small class sizes)
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y_encoded, test_size=0.2, random_state=42)
 
 # Train model with better hyperparameters
 model = RandomForestClassifier(

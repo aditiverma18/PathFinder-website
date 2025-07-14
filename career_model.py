@@ -57,7 +57,10 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 print("🎯 Model Accuracy:", accuracy_score(y_test, y_pred))
 print("📊 Classification Report:")
-print(classification_report(y_test, y_pred, target_names=label_encoder.classes_))
+# Get unique labels in test set to avoid mismatch
+test_labels = sorted(list(set(y_test) | set(y_pred)))
+test_class_names = [label_encoder.classes_[i] for i in test_labels]
+print(classification_report(y_test, y_pred, labels=test_labels, target_names=test_class_names, zero_division=0))
 
 # Feature importance
 feature_importance = pd.DataFrame({

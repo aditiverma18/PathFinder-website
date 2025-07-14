@@ -1,113 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Career Quiz | PathFinder</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Career Quiz</title>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fef8f6;
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
       margin: 0;
-      padding: 0;
+      padding: 20px;
     }
-
-    .header {
-      background-color: #b7dfce;
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #1c3c34;
-    }
-
     .container {
       max-width: 800px;
-      background-color: #ffffff;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
     h2 {
-      color: #1c3c34;
       text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .question {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .question p {
-      margin: 0 0 0.5rem;
-      font-weight: 600;
       color: #333;
     }
-
-    .question label {
-      margin-right: 15px;
-      font-weight: 400;
-      color: #555;
+    .question {
+      margin-bottom: 20px;
     }
-
-    button {
+    .question p {
+      font-weight: bold;
+    }
+    .options input {
+      margin-right: 5px;
+    }
+    .submit-btn {
       display: block;
-      margin: 2rem auto 0;
-      padding: 12px 28px;
-      font-size: 16px;
-      font-weight: 600;
-      background-color: #1c3c34;
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 8px;
+      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.2s;
     }
-
-    button:hover {
-      background-color: #145248;
+    .submit-btn:hover {
+      background-color: #0056b3;
     }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 1rem;
-      }
+    .prediction {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 20px;
+      color: green;
     }
   </style>
 </head>
 <body>
-  <div class="header">PathFinder Career Quiz</div>
-
   <div class="container">
-    <h2>Start Your Career Exploration</h2>
-    <form id="quizForm" method="post" action="/submit_quiz">
-      <div id="quizContainer"></div>
-      <button type="submit">Submit</button>
+    <h2>Career Quiz</h2>
+    {% if prediction_text %}
+      <div class="prediction">{{ prediction_text }}</div>
+    {% endif %}
+    <form id="quizForm" method="POST" action="/submit_quiz">
+      <div id="quizContainer">Loading questions...</div>
+      <button type="submit" class="submit-btn">Submit Quiz</button>
     </form>
   </div>
 
   <script>
-    fetch('/get_questions')
+    fetch("/get_questions")
       .then(res => res.json())
       .then(data => {
-        const container = document.getElementById('quizContainer');
+        const container = document.getElementById("quizContainer");
+        container.innerHTML = '';
         data.forEach(q => {
-          const html = `
+          const qHtml = `
             <div class="question">
               <p>${q.question}</p>
-              <label><input type="radio" name="q${q.id}" value="1" required> Strongly Disagree</label>
-              <label><input type="radio" name="q${q.id}" value="2"> Disagree</label>
-              <label><input type="radio" name="q${q.id}" value="3"> Neutral</label>
-              <label><input type="radio" name="q${q.id}" value="4"> Agree</label>
-              <label><input type="radio" name="q${q.id}" value="5"> Strongly Agree</label>
+              <div class="options">
+                <label><input type="radio" name="q${q.id}" value="1" required> Strongly Disagree</label><br>
+                <label><input type="radio" name="q${q.id}" value="2"> Disagree</label><br>
+                <label><input type="radio" name="q${q.id}" value="3"> Neutral</label><br>
+                <label><input type="radio" name="q${q.id}" value="4"> Agree</label><br>
+                <label><input type="radio" name="q${q.id}" value="5"> Strongly Agree</label>
+              </div>
             </div>
           `;
-          container.innerHTML += html;
+          container.innerHTML += qHtml;
         });
+      })
+      .catch(err => {
+        document.getElementById("quizContainer").innerHTML = "⚠️ Failed to load questions.";
+        console.error("Error loading questions:", err);
       });
   </script>
 </body>

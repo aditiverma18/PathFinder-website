@@ -2,9 +2,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from pymongo import MongoClient
 import pickle
-import numpy as np
 import json
-import os
 
 # MongoDB Setup
 client = MongoClient("mongodb+srv://10caditiverma:ZGzxoFRG8YEEpfz4@cluster0.jvmwija.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
@@ -12,15 +10,20 @@ db = client['pathFinder_db']
 users_collection = db['users']
 
 app = Flask(__name__)
-app.secret_key = 'aditi_verma_secret_2025' 
+app.secret_key = 'aditi_verma_secret_2025'
 
-# Load ML Model
+# Traits list (OCEAN)
+traits = ["O_score", "C_score", "E_score", "A_score", "N_score"]
+
+# Load ML Model + Label Encoder
 with open('career_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+    model, label_encoder = pickle.load(f)
 
 # Load quiz questions
 with open('questions.json', 'r') as f:
-    questions_data = json.load(f)
+    questions_json = json.load(f)  # Load full JSON object
+    questions_data = questions_json['content'] 
+
 
 # Home (Redirects to Dashboard)
 @app.route('/')
@@ -29,7 +32,6 @@ def home():
         return redirect(url_for('dashboard'))
     else:
         return redirect(url_for('login'))
-
 
 # Dashboard
 @app.route('/dashboard')
@@ -44,64 +46,39 @@ def quiz():
 # Serve Quiz Questions
 @app.route('/get_questions')
 def get_questions():
-    return jsonify(questions_data)
-
-# Predict Career Based on Quiz Responses
-@app.route('/predict', methods=['POST'])
-def predict():
     try:
-        data = request.get_json()
-        input_features = [
-            float(data['O_score']),
-            float(data['C_score']),
-            float(data['E_score']),
-            float(data['A_score']),
-            float(data['N_score']),
-            float(data['Numerical']),
-            float(data['Spatial']),
-            float(data['Perceptual']),
-            float(data['Abstract']),
-            float(data['Verbal']),
-        ]
-        prediction = model.predict([input_features])[0]
-        return jsonify({'career': prediction})
+        # Return the pre-loaded questions data
+        return jsonify(questions_data['content'])  # Return the 'content' array
     except Exception as e:
-        return jsonify({'error': str(e)})
+        return jsonify({"error": str(e)}), 500
 
+
+# Submit and Predict Career
 @app.route('/submit_quiz', methods=['POST'])
 def submit_quiz():
-    try:
-        with open('questions.json', 'r') as f:
-            questions = json.load(f)
+    trait_scores = {trait: [] for trait in traits}
 
-        scores = {'O': 0, 'C': 0, 'E': 0, 'A': 0, 'N': 0,
-                  'Numerical': 0, 'Spatial': 0, 'Perceptual': 0,
-                  'Abstract': 0, 'Verbal': 0}
-        count = {'O': 0, 'C': 0, 'E': 0, 'A': 0, 'N': 0,
-                 'Numerical': 0, 'Spatial': 0, 'Perceptual': 0,
-                 'Abstract': 0, 'Verbal': 0}
+    # Get weighted scores from each question
+    for q in questions_data:
+        qid = f"q{q['id']}"
+        if qid not in request.form:
+            return render_template('quiz.html', prediction_text="⚠️ Please complete all questions.")
 
-        # Aggregate trait scores
-        for q in questions:
-            trait = q['trait']
-            response = int(request.form.get(f"q{q['id']}"))
-            scores[trait] += response
-            count[trait] += 1
+        user_score = int(request.form[qid])
+        for trait, weight in q["weights"].items():
+            trait_scores[trait].append(user_score * weight)
 
-        # Average the scores
-        traits = [round(scores[k] / count[k], 2) if count[k] != 0 else 0 for k in [
-            'O', 'C', 'E', 'A', 'N',
-            'Numerical', 'Spatial', 'Perceptual',
-            'Abstract', 'Verbal'
-        ]]
+    # Average the trait scores
+    input_features = []
+    for trait in traits:
+        avg = sum(trait_scores[trait]) / len(trait_scores[trait]) if trait_scores[trait] else 0
+        input_features.append(avg)
 
-        # Predict using the ML model
-        prediction = model.predict([traits])[0]
-        return render_template('quiz.html', prediction_text=f'Recommended Career: {prediction}')
+    # Predict and decode label
+    prediction_index = model.predict([input_features])[0]
+    prediction = label_encoder.inverse_transform([prediction_index])[0]
 
-    except Exception as e:
-        return f"Prediction error: {e}"
-
+    return render_template('quiz.html', prediction_text=f"🎯 Recommended Career: {prediction}")
 
 # Signup Page
 @app.route('/signup', methods=['GET', 'POST'])
@@ -132,6 +109,7 @@ def login():
 
         user = users_collection.find_one({'email': email, 'password': password})
         if user:
+            session['user'] = user['email']
             return redirect(url_for('dashboard'))
         else:
             return "❌ Invalid credentials"

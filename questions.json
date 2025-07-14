@@ -1,3 +1,4 @@
+
 {
 "name": "weighted_questions",
 "type": "json",
@@ -6,220 +7,220 @@
 "id": 1,
 "question": "I enjoy trying out new and creative ideas.",
 "weights": {
-"1": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 1},
-"2": {"O": 1, "C": 1, "E": 0, "A": 0, "N": 0},
-"3": {"O": 2, "C": 0, "E": 1, "A": 1, "N": 0},
-"4": {"O": 3, "C": 1, "E": 1, "A": 2, "N": 0},
-"5": {"O": 4, "C": 1, "E": 2, "A": 2, "N": 0}
+"1": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"3": {"O": 2, "C": 0, "E": 1, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 0},
+"4": {"O": 3, "C": 1, "E": 1, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 2, "Verbal": 0},
+"5": {"O": 4, "C": 1, "E": 2, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 3, "Verbal": 0}
 }
 },
 {
 "id": 2,
 "question": "I prefer to plan things out rather than act spontaneously.",
 "weights": {
-"1": {"O": 1, "C": 0, "E": 1, "A": 0, "N": 1},
-"2": {"O": 1, "C": 1, "E": 0, "A": 1, "N": 1},
-"3": {"O": 1, "C": 2, "E": 1, "A": 1, "N": 0},
-"4": {"O": 0, "C": 3, "E": 1, "A": 2, "N": 0},
-"5": {"O": 0, "C": 4, "E": 1, "A": 2, "N": 0}
+"1": {"O": 1, "C": 0, "E": 1, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 1, "E": 0, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"3": {"O": 1, "C": 2, "E": 1, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"4": {"O": 0, "C": 3, "E": 1, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"5": {"O": 0, "C": 4, "E": 1, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0}
 }
 },
 {
 "id": 3,
-"question": "I feel energized when I’m around people.",
+"question": "I feel energized when I'm around people.",
 "weights": {
-"1": {"O": 0, "C": 1, "E": 0, "A": 1, "N": 1},
-"2": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 0},
-"3": {"O": 1, "C": 1, "E": 2, "A": 2, "N": 0},
-"4": {"O": 1, "C": 0, "E": 3, "A": 2, "N": 0},
-"5": {"O": 1, "C": 0, "E": 4, "A": 1, "N": 0}
+"1": {"O": 0, "C": 1, "E": 0, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"3": {"O": 1, "C": 1, "E": 2, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 1},
+"4": {"O": 1, "C": 0, "E": 3, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 2},
+"5": {"O": 1, "C": 0, "E": 4, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 3}
 }
 },
 {
 "id": 4,
 "question": "I am highly sensitive to stress and emotional turmoil.",
 "weights": {
-"1": {"O": 1, "C": 1, "E": 0, "A": 0, "N": 4},
-"2": {"O": 1, "C": 1, "E": 1, "A": 0, "N": 3},
-"3": {"O": 1, "C": 1, "E": 1, "A": 1, "N": 2},
-"4": {"O": 0, "C": 2, "E": 2, "A": 1, "N": 1},
-"5": {"O": 0, "C": 3, "E": 2, "A": 2, "N": 0}
+"1": {"O": 1, "C": 1, "E": 0, "A": 0, "N": 4, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 1, "E": 1, "A": 0, "N": 3, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"3": {"O": 1, "C": 1, "E": 1, "A": 1, "N": 2, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"4": {"O": 0, "C": 2, "E": 2, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"5": {"O": 0, "C": 3, "E": 2, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0}
 }
 },
 {
 "id": 5,
 "question": "I often think about philosophical or abstract ideas.",
 "weights": {
-"1": {"O": 0, "C": 1, "E": 0, "A": 1, "N": 1},
-"2": {"O": 1, "C": 1, "E": 0, "A": 1, "N": 1},
-"3": {"O": 2, "C": 1, "E": 1, "A": 2, "N": 1},
-"4": {"O": 3, "C": 0, "E": 1, "A": 1, "N": 0},
-"5": {"O": 4, "C": 0, "E": 2, "A": 0, "N": 0}
+"1": {"O": 0, "C": 1, "E": 0, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 1, "E": 0, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 1},
+"3": {"O": 2, "C": 1, "E": 1, "A": 2, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 2, "Verbal": 2},
+"4": {"O": 3, "C": 0, "E": 1, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 3, "Verbal": 3},
+"5": {"O": 4, "C": 0, "E": 2, "A": 0, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 4, "Verbal": 4}
 }
 },
 {
 "id": 6,
-"question": "I like to keep my workspace neat and organized.",
+"question": "I can solve mathematical problems quickly and accurately.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 1, "A": 1, "N": 1},
-"2": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 1},
-"3": {"O": 1, "C": 2, "E": 1, "A": 1, "N": 1},
-"4": {"O": 0, "C": 3, "E": 1, "A": 2, "N": 0},
-"5": {"O": 0, "C": 4, "E": 1, "A": 2, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 1, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 0},
+"3": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 2, "Spatial": 0, "Perceptual": 0, "Abstract": 2, "Verbal": 0},
+"4": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 3, "Spatial": 0, "Perceptual": 0, "Abstract": 3, "Verbal": 0},
+"5": {"O": 0, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 4, "Spatial": 0, "Perceptual": 0, "Abstract": 4, "Verbal": 0}
 }
 },
 {
 "id": 7,
-"question": "I feel comfortable leading group activities.",
+"question": "I can easily visualize objects in three dimensions.",
 "weights": {
-"1": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 2},
-"2": {"O": 1, "C": 1, "E": 1, "A": 1, "N": 1},
-"3": {"O": 1, "C": 1, "E": 2, "A": 2, "N": 1},
-"4": {"O": 1, "C": 0, "E": 3, "A": 2, "N": 0},
-"5": {"O": 1, "C": 0, "E": 4, "A": 1, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 1, "Perceptual": 0, "Abstract": 1, "Verbal": 0},
+"3": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 2, "Perceptual": 1, "Abstract": 2, "Verbal": 0},
+"4": {"O": 2, "C": 0, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 3, "Perceptual": 2, "Abstract": 3, "Verbal": 0},
+"5": {"O": 2, "C": 0, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 4, "Perceptual": 3, "Abstract": 4, "Verbal": 0}
 }
 },
 {
 "id": 8,
-"question": "I find it hard to forgive others.",
+"question": "I notice small details that others often miss.",
 "weights": {
-"1": {"O": 0, "C": 1, "E": 0, "A": 4, "N": 0},
-"2": {"O": 0, "C": 1, "E": 0, "A": 3, "N": 1},
-"3": {"O": 0, "C": 1, "E": 0, "A": 2, "N": 2},
-"4": {"O": 0, "C": 0, "E": 1, "A": 1, "N": 3},
-"5": {"O": 0, "C": 0, "E": 1, "A": 0, "N": 4}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 1, "Abstract": 0, "Verbal": 0},
+"3": {"O": 1, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 1, "Perceptual": 2, "Abstract": 0, "Verbal": 0},
+"4": {"O": 1, "C": 3, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 2, "Perceptual": 3, "Abstract": 0, "Verbal": 0},
+"5": {"O": 2, "C": 4, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 2, "Perceptual": 4, "Abstract": 0, "Verbal": 0}
 }
 },
 {
 "id": 9,
-"question": "I enjoy helping others even when it’s inconvenient.",
+"question": "I can identify patterns and connections in complex information.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1},
-"2": {"O": 0, "C": 0, "E": 0, "A": 1, "N": 1},
-"3": {"O": 1, "C": 0, "E": 1, "A": 2, "N": 1},
-"4": {"O": 1, "C": 0, "E": 1, "A": 3, "N": 0},
-"5": {"O": 1, "C": 0, "E": 1, "A": 4, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 0, "Numerical": 1, "Spatial": 0, "Perceptual": 1, "Abstract": 1, "Verbal": 0},
+"3": {"O": 2, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 2, "Spatial": 1, "Perceptual": 2, "Abstract": 2, "Verbal": 1},
+"4": {"O": 3, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 3, "Spatial": 2, "Perceptual": 3, "Abstract": 3, "Verbal": 1},
+"5": {"O": 4, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 4, "Spatial": 2, "Perceptual": 4, "Abstract": 4, "Verbal": 2}
 }
 },
 {
 "id": 10,
-"question": "I often worry about the future.",
+"question": "I express myself clearly through speaking and writing.",
 "weights": {
-"1": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 4},
-"2": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 3},
-"3": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 2},
-"4": {"O": 0, "C": 2, "E": 1, "A": 1, "N": 1},
-"5": {"O": 0, "C": 3, "E": 1, "A": 1, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 1},
+"3": {"O": 1, "C": 1, "E": 2, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 2},
+"4": {"O": 1, "C": 1, "E": 3, "A": 3, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 2, "Verbal": 3},
+"5": {"O": 2, "C": 2, "E": 4, "A": 4, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 2, "Verbal": 4}
 }
 },
 {
 "id": 11,
-"question": "I prefer variety and change over routine.",
+"question": "I like to keep my workspace neat and organized.",
 "weights": {
-"1": {"O": 0, "C": 1, "E": 1, "A": 0, "N": 1},
-"2": {"O": 1, "C": 1, "E": 1, "A": 0, "N": 1},
-"3": {"O": 2, "C": 1, "E": 1, "A": 1, "N": 0},
-"4": {"O": 3, "C": 0, "E": 1, "A": 2, "N": 0},
-"5": {"O": 4, "C": 0, "E": 2, "A": 2, "N": 0}
+"1": {"O": 0, "C": 0, "E": 1, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"3": {"O": 1, "C": 2, "E": 1, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 1, "Abstract": 0, "Verbal": 0},
+"4": {"O": 0, "C": 3, "E": 1, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 2, "Abstract": 0, "Verbal": 0},
+"5": {"O": 0, "C": 4, "E": 1, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 3, "Abstract": 0, "Verbal": 0}
 }
 },
 {
 "id": 12,
-"question": "I finish tasks before the deadline.",
+"question": "I feel comfortable leading group activities.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1},
-"2": {"O": 0, "C": 1, "E": 0, "A": 1, "N": 1},
-"3": {"O": 0, "C": 2, "E": 0, "A": 2, "N": 0},
-"4": {"O": 0, "C": 3, "E": 1, "A": 3, "N": 0},
-"5": {"O": 0, "C": 4, "E": 1, "A": 3, "N": 0}
+"1": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 2, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 1, "E": 1, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 1},
+"3": {"O": 1, "C": 1, "E": 2, "A": 2, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 2},
+"4": {"O": 1, "C": 0, "E": 3, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 3},
+"5": {"O": 1, "C": 0, "E": 4, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 4}
 }
 },
 {
 "id": 13,
-"question": "I often speak up in group discussions.",
+"question": "I enjoy helping others even when it's inconvenient.",
 "weights": {
-"1": {"O": 0, "C": 1, "E": 0, "A": 1, "N": 1},
-"2": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 0},
-"3": {"O": 1, "C": 0, "E": 2, "A": 1, "N": 0},
-"4": {"O": 1, "C": 0, "E": 3, "A": 1, "N": 0},
-"5": {"O": 1, "C": 0, "E": 4, "A": 0, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 0, "E": 0, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"3": {"O": 1, "C": 0, "E": 1, "A": 2, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 1},
+"4": {"O": 1, "C": 0, "E": 1, "A": 3, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 2},
+"5": {"O": 1, "C": 0, "E": 1, "A": 4, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 3}
 }
 },
 {
 "id": 14,
-"question": "I empathize with others’ feelings easily.",
+"question": "I often worry about the future.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 0, "A": 1, "N": 2},
-"2": {"O": 0, "C": 0, "E": 1, "A": 2, "N": 1},
-"3": {"O": 1, "C": 0, "E": 1, "A": 3, "N": 1},
-"4": {"O": 1, "C": 0, "E": 1, "A": 4, "N": 0},
-"5": {"O": 1, "C": 0, "E": 1, "A": 5, "N": 0}
+"1": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 4, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 3, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"3": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 2, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"4": {"O": 0, "C": 2, "E": 1, "A": 1, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"5": {"O": 0, "C": 3, "E": 1, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0}
 }
 },
 {
 "id": 15,
-"question": "I sometimes feel overwhelmed by my emotions.",
+"question": "I prefer variety and change over routine.",
 "weights": {
-"1": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 4},
-"2": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 3},
-"3": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 2},
-"4": {"O": 0, "C": 2, "E": 1, "A": 1, "N": 1},
-"5": {"O": 0, "C": 3, "E": 1, "A": 1, "N": 0}
+"1": {"O": 0, "C": 1, "E": 1, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 1, "E": 1, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"3": {"O": 2, "C": 1, "E": 1, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 0},
+"4": {"O": 3, "C": 0, "E": 1, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 2, "Verbal": 0},
+"5": {"O": 4, "C": 0, "E": 2, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 3, "Verbal": 0}
 }
 },
 {
 "id": 16,
-"question": "I seek out art, music, or literature.",
+"question": "I enjoy working with numbers and calculations.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1},
-"2": {"O": 1, "C": 0, "E": 1, "A": 1, "N": 0},
-"3": {"O": 2, "C": 1, "E": 1, "A": 1, "N": 0},
-"4": {"O": 3, "C": 1, "E": 1, "A": 2, "N": 0},
-"5": {"O": 4, "C": 1, "E": 2, "A": 2, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 1, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 0},
+"3": {"O": 0, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 2, "Spatial": 0, "Perceptual": 1, "Abstract": 2, "Verbal": 0},
+"4": {"O": 0, "C": 3, "E": 0, "A": 0, "N": 0, "Numerical": 3, "Spatial": 0, "Perceptual": 2, "Abstract": 3, "Verbal": 0},
+"5": {"O": 0, "C": 4, "E": 0, "A": 0, "N": 0, "Numerical": 4, "Spatial": 0, "Perceptual": 3, "Abstract": 4, "Verbal": 0}
 }
 },
 {
 "id": 17,
-"question": "I avoid situations that can be stressful.",
+"question": "I can picture how objects fit together in space.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 1, "A": 0, "N": 4},
-"2": {"O": 0, "C": 1, "E": 1, "A": 1, "N": 3},
-"3": {"O": 0, "C": 2, "E": 1, "A": 1, "N": 2},
-"4": {"O": 0, "C": 3, "E": 1, "A": 2, "N": 1},
-"5": {"O": 0, "C": 4, "E": 1, "A": 2, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 0, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 1, "Perceptual": 0, "Abstract": 1, "Verbal": 0},
+"3": {"O": 2, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 1, "Spatial": 2, "Perceptual": 1, "Abstract": 2, "Verbal": 0},
+"4": {"O": 3, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 1, "Spatial": 3, "Perceptual": 2, "Abstract": 3, "Verbal": 0},
+"5": {"O": 4, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 2, "Spatial": 4, "Perceptual": 3, "Abstract": 4, "Verbal": 0}
 }
 },
 {
 "id": 18,
-"question": "I usually follow rules even when no one is watching.",
+"question": "I have excellent hand-eye coordination.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 0, "A": 1, "N": 1},
-"2": {"O": 0, "C": 1, "E": 0, "A": 2, "N": 0},
-"3": {"O": 0, "C": 2, "E": 0, "A": 3, "N": 0},
-"4": {"O": 0, "C": 3, "E": 1, "A": 4, "N": 0},
-"5": {"O": 0, "C": 4, "E": 1, "A": 5, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 0, "Spatial": 1, "Perceptual": 1, "Abstract": 0, "Verbal": 0},
+"3": {"O": 1, "C": 1, "E": 1, "A": 0, "N": 0, "Numerical": 0, "Spatial": 2, "Perceptual": 2, "Abstract": 0, "Verbal": 0},
+"4": {"O": 1, "C": 2, "E": 1, "A": 0, "N": 0, "Numerical": 0, "Spatial": 3, "Perceptual": 3, "Abstract": 0, "Verbal": 0},
+"5": {"O": 2, "C": 2, "E": 2, "A": 0, "N": 0, "Numerical": 0, "Spatial": 4, "Perceptual": 4, "Abstract": 0, "Verbal": 0}
 }
 },
 {
 "id": 19,
-"question": "I am full of ideas.",
+"question": "I can solve complex logical puzzles.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 1, "A": 0, "N": 1},
-"2": {"O": 1, "C": 1, "E": 1, "A": 0, "N": 1},
-"3": {"O": 2, "C": 1, "E": 2, "A": 1, "N": 0},
-"4": {"O": 3, "C": 1, "E": 2, "A": 2, "N": 0},
-"5": {"O": 4, "C": 1, "E": 3, "A": 2, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 1, "Spatial": 0, "Perceptual": 1, "Abstract": 1, "Verbal": 0},
+"3": {"O": 2, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 2, "Spatial": 1, "Perceptual": 2, "Abstract": 2, "Verbal": 1},
+"4": {"O": 3, "C": 3, "E": 0, "A": 0, "N": 0, "Numerical": 3, "Spatial": 2, "Perceptual": 3, "Abstract": 3, "Verbal": 1},
+"5": {"O": 4, "C": 4, "E": 0, "A": 0, "N": 0, "Numerical": 4, "Spatial": 2, "Perceptual": 4, "Abstract": 4, "Verbal": 2}
 }
 },
 {
 "id": 20,
-"question": "I make people feel at ease.",
+"question": "I have a strong vocabulary and love reading.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 0, "A": 1, "N": 2},
-"2": {"O": 0, "C": 0, "E": 1, "A": 2, "N": 1},
-"3": {"O": 0, "C": 0, "E": 2, "A": 3, "N": 1},
-"4": {"O": 0, "C": 0, "E": 3, "A": 4, "N": 0},
-"5": {"O": 0, "C": 0, "E": 4, "A": 5, "N": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 1, "C": 0, "E": 0, "A": 1, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 1},
+"3": {"O": 2, "C": 1, "E": 1, "A": 2, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 2, "Verbal": 2},
+"4": {"O": 3, "C": 1, "E": 1, "A": 3, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 3, "Verbal": 3},
+"5": {"O": 4, "C": 2, "E": 2, "A": 4, "N": 0, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 4, "Verbal": 4}
 }
 }
 ]

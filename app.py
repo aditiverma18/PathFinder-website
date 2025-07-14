@@ -56,8 +56,11 @@ def get_questions():
 # Submit and Predict Career
 @app.route('/submit_quiz', methods=['POST'])
 def submit_quiz():
-    # Initialize trait scores for OCEAN
-    trait_scores = {"O": [], "C": [], "E": [], "A": [], "N": []}
+    # Initialize trait scores for all 10 features
+    trait_scores = {
+        "O": [], "C": [], "E": [], "A": [], "N": [],
+        "Numerical": [], "Spatial": [], "Perceptual": [], "Abstract": [], "Verbal": []
+    }
 
     # Get weighted scores from each question
     for q in questions_data:
@@ -72,9 +75,11 @@ def submit_quiz():
         for trait, weight in user_answer_weights.items():
             trait_scores[trait].append(weight)
 
-    # Calculate average scores for each trait
+    # Calculate average scores for each trait in the correct order
     input_features = []
-    for trait in ["O", "C", "E", "A", "N"]:
+    feature_order = ["O", "C", "E", "A", "N", "Numerical", "Spatial", "Perceptual", "Abstract", "Verbal"]
+    
+    for trait in feature_order:
         avg = sum(trait_scores[trait]) / len(trait_scores[trait]) if trait_scores[trait] else 0
         input_features.append(avg)
 

@@ -15,9 +15,9 @@ app.secret_key = 'aditi_verma_secret_2025'
 # Traits list (OCEAN)
 traits = ["O_score", "C_score", "E_score", "A_score", "N_score"]
 
-# Load ML Model + Label Encoder
+# Load ML Model + Label Encoder + Scaler
 with open('career_model.pkl', 'rb') as f:
-    model, label_encoder = pickle.load(f)
+    model, label_encoder, scaler = pickle.load(f)
 
 # Load quiz questions
 with open('questions.json', 'r') as f:
@@ -80,12 +80,28 @@ def submit_quiz():
     feature_order = ["O", "C", "E", "A", "N", "Numerical", "Spatial", "Perceptual", "Abstract", "Verbal"]
     
     for trait in feature_order:
-        avg = sum(trait_scores[trait]) / len(trait_scores[trait]) if trait_scores[trait] else 0
+        if trait_scores[trait]:
+            avg = sum(trait_scores[trait]) / len(trait_scores[trait])
+        else:
+            avg = 0
         input_features.append(avg)
 
+    # Debug output
+    print("🔍 Raw trait scores:", {trait: sum(trait_scores[trait])/len(trait_scores[trait]) if trait_scores[trait] else 0 for trait in feature_order})
+    
+    # Scale the features using the same scaler from training
+    input_features_scaled = scaler.transform([input_features])
+    
     # Predict and decode label
-    prediction_index = model.predict([input_features])[0]
+    prediction_index = model.predict(input_features_scaled)[0]
     prediction = label_encoder.inverse_transform([prediction_index])[0]
+    
+    # Get prediction probabilities for debugging
+    probabilities = model.predict_proba(input_features_scaled)[0]
+    top_predictions = [(label_encoder.inverse_transform([i])[0], prob) for i, prob in enumerate(probabilities)]
+    top_predictions.sort(key=lambda x: x[1], reverse=True)
+    
+    print("🎯 Top 3 predictions:", top_predictions[:3])
 
     return render_template('quiz.html', prediction_text=f"🎯 Recommended Career: {prediction}")
 

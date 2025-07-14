@@ -62,11 +62,11 @@
 "id": 6,
 "question": "I can solve mathematical problems quickly and accurately.",
 "weights": {
-"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 1, "Numerical": 0, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
-"2": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 1, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 0},
-"3": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 2, "Spatial": 0, "Perceptual": 0, "Abstract": 2, "Verbal": 0},
-"4": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 3, "Spatial": 0, "Perceptual": 0, "Abstract": 3, "Verbal": 0},
-"5": {"O": 0, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 4, "Spatial": 0, "Perceptual": 0, "Abstract": 4, "Verbal": 0}
+"1": {"O": 0, "C": 0, "E": 0, "A": 0, "N": 2, "Numerical": 1, "Spatial": 0, "Perceptual": 0, "Abstract": 0, "Verbal": 0},
+"2": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 1, "Numerical": 2, "Spatial": 0, "Perceptual": 0, "Abstract": 1, "Verbal": 0},
+"3": {"O": 0, "C": 1, "E": 0, "A": 0, "N": 0, "Numerical": 3, "Spatial": 0, "Perceptual": 1, "Abstract": 2, "Verbal": 0},
+"4": {"O": 0, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 4, "Spatial": 0, "Perceptual": 1, "Abstract": 3, "Verbal": 0},
+"5": {"O": 1, "C": 2, "E": 0, "A": 0, "N": 0, "Numerical": 5, "Spatial": 1, "Perceptual": 1, "Abstract": 4, "Verbal": 0}
 }
 },
 {

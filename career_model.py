@@ -13,11 +13,9 @@ df.columns = df.columns.str.strip()
 # (Optional Debug)
 print("🔍 Available Columns:", df.columns.tolist())
 
-# Define features and target
+# Define features and target (only OCEAN scores to match quiz)
 feature_columns = [
-    "O_score", "C_score", "E_score", "A_score", "N_score",
-    "Numerical Aptitude", "Spatial Aptitude", "Perceptual Aptitude",
-    "Abstract Reasoning", "Verbal Reasoning"
+    "O_score", "C_score", "E_score", "A_score", "N_score"
 ]
 
 X = df[feature_columns]

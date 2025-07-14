@@ -56,7 +56,8 @@ def get_questions():
 # Submit and Predict Career
 @app.route('/submit_quiz', methods=['POST'])
 def submit_quiz():
-    trait_scores = {trait: [] for trait in traits}
+    # Initialize trait scores for OCEAN
+    trait_scores = {"O": [], "C": [], "E": [], "A": [], "N": []}
 
     # Get weighted scores from each question
     for q in questions_data:
@@ -65,12 +66,15 @@ def submit_quiz():
             return render_template('quiz.html', prediction_text="⚠️ Please complete all questions.")
 
         user_score = int(request.form[qid])
-        for trait, weight in q["weights"].items():
-            trait_scores[trait].append(user_score * weight)
+        user_answer_weights = q["weights"][str(user_score)]
+        
+        # Add weighted scores for each trait
+        for trait, weight in user_answer_weights.items():
+            trait_scores[trait].append(weight)
 
-    # Average the trait scores
+    # Calculate average scores for each trait
     input_features = []
-    for trait in traits:
+    for trait in ["O", "C", "E", "A", "N"]:
         avg = sum(trait_scores[trait]) / len(trait_scores[trait]) if trait_scores[trait] else 0
         input_features.append(avg)
 

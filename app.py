@@ -48,7 +48,7 @@ def quiz():
 def get_questions():
     try:
         # Return the pre-loaded questions data
-        return jsonify(questions_data['content'])  # Return the 'content' array
+        return jsonify(questions_data)  # questions_data is already the content array
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -132,4 +132,4 @@ def logout():
 
 # Run App
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

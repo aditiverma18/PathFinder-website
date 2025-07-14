@@ -15,26 +15,26 @@ app.secret_key = 'aditi_verma_secret_2025'
 # Traits list (OCEAN)
 traits = ["O_score", "C_score", "E_score", "A_score", "N_score"]
 
-# Load ML Model + Label Encoder + Scaler
+# Load ML Model + Label Encoder + Scaler + Career Mapping
 try:
     with open('career_model.pkl', 'rb') as f:
         model_data = pickle.load(f)
-        if isinstance(model_data, tuple) and len(model_data) == 3:
-            model, label_encoder, scaler = model_data
+        if isinstance(model_data, tuple) and len(model_data) == 4:
+            model, label_encoder, scaler, career_mapping = model_data
         else:
             print("⚠️ Model file format incorrect. Retraining model...")
             # If model format is wrong, retrain it
             import subprocess
             subprocess.run(['python', 'career_model.py'])
             with open('career_model.pkl', 'rb') as f:
-                model, label_encoder, scaler = pickle.load(f)
+                model, label_encoder, scaler, career_mapping = pickle.load(f)
 except Exception as e:
     print(f"❌ Error loading model: {e}")
     print("🔄 Retraining model...")
     import subprocess
     subprocess.run(['python', 'career_model.py'])
     with open('career_model.pkl', 'rb') as f:
-        model, label_encoder, scaler = pickle.load(f)
+        model, label_encoder, scaler, career_mapping = pickle.load(f)
 
 # Load quiz questions
 with open('questions.json', 'r') as f:
@@ -111,16 +111,28 @@ def submit_quiz():
     
     # Predict and decode label
     prediction_index = model.predict(input_features_scaled)[0]
-    prediction = label_encoder.inverse_transform([prediction_index])[0]
+    predicted_category = label_encoder.inverse_transform([prediction_index])[0]
     
     # Get prediction probabilities for debugging
     probabilities = model.predict_proba(input_features_scaled)[0]
     top_predictions = [(label_encoder.inverse_transform([i])[0], prob) for i, prob in enumerate(probabilities)]
     top_predictions.sort(key=lambda x: x[1], reverse=True)
     
+    # Get specific career suggestions from the predicted category
+    specific_careers = [career for career, category in career_mapping.items() if category == predicted_category]
+    
     print("🎯 Top 3 predictions:", top_predictions[:3])
+    print("🎯 Predicted category:", predicted_category)
+    print("🎯 Specific careers:", specific_careers[:3])
 
-    return render_template('quiz.html', prediction_text=f"🎯 Recommended Career: {prediction}")
+    # Create a more detailed prediction message
+    if specific_careers:
+        career_suggestions = ", ".join(specific_careers[:3])
+        prediction_text = f"🎯 Recommended Career Field: {predicted_category}<br>💼 Specific careers to consider: {career_suggestions}"
+    else:
+        prediction_text = f"🎯 Recommended Career Field: {predicted_category}"
+
+    return render_template('quiz.html', prediction_text=prediction_text)
 
 # Signup Page
 @app.route('/signup', methods=['GET', 'POST'])
